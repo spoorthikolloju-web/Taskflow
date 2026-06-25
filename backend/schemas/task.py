@@ -30,4 +30,4 @@ class TaskResponse(BaseModel):
     updated_at: datetime
     owner_id: int
     class Config:
-        from_attributes = True
+       orm_mode = True
