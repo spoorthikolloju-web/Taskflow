@@ -9,10 +9,7 @@ app = FastAPI(title="TaskFlow API", description="Task Management REST API", vers
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "https://taskflow-c8471491w-spoorthi-s-project.vercel.app"
-    ],
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
