@@ -18,7 +18,7 @@ class UserResponse(BaseModel):
     is_active: bool
     created_at: datetime
     class Config:
-        from_attributes = True
+         orm_mode = True
 
 class Token(BaseModel):
     access_token: str
