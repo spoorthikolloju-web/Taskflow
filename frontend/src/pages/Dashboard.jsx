@@ -36,7 +36,7 @@ export default function Dashboard() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const payload = { ...form, due_date: form.due_date || null }
+      const payload = {...form, due_date: form.due_date   ? `${form.due_date}T00:00:00`   : null}
       if (editingTask) {
         await updateTask(editingTask.id, payload)
         toast.success('Task updated!')
